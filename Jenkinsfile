@@ -12,7 +12,7 @@ pipeline {
         stage ('Build & Test') {
             steps {
                 echo 'Build & Test'
-                sh 'docker build . -t ajitfawade14/node-todo-app:latest'
+                sh 'docker build . -t meher9461/node_to_do_app:latest'
             }
         }
         
@@ -21,7 +21,7 @@ pipeline {
                 echo 'Logging in to docker hub and pushing image'
                 withCredentials([usernamePassword('credentialsId':'dockerhub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]){
                     sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-                    sh "docker image push ajitfawade14/node-todo-app:latest"
+                    sh "docker image push meher9461/node_to_do_app:latest"
                 }
             }
         }
