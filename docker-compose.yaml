@@ -1,7 +1,7 @@
-version: '3.9'
+version: '3'
 
 services:
   web:
-    image: "ajitfawade14/node-app-todo:latest"
+    image: "trainwithshubham/node-app-todo:latest"
     ports:
       - "8000:8000"
